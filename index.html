@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Sum II Visualizer | Elizabeth Diaz Familia</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Añadir fuente Poppins de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://img.icons8.com/dusk/64/null/code.png">
+    <!-- Meta tags para SEO y compartir en redes sociales -->
+    <meta name="description" content="Visualizador interactivo para el algoritmo Two Sum II con arrays ordenados">
+    <meta name="keywords" content="two sum ii, algoritmo, visualizador, javascript, array ordenado">
+    <meta name="author" content="Elizabeth Diaz Familia">
+    <meta property="og:title" content="Two Sum II Visualizer">
+    <meta property="og:description" content="Visualizador interactivo para el algoritmo Two Sum II con arrays ordenados">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div class="stars-container">
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon"><img src="https://img.icons8.com/dusk/64/null/code.png" alt="Logo"></span>
+                <h1>Two Sum II</h1>
+            </div>
+            <p class="tagline">Algoritmo de búsqueda optimizado para arrays ordenados</p>
+        </header>
+        
+        <div class="card input-card">
+            <div class="card-header">
+                <div class="card-icon">📊</div>
+                <h2>Datos de entrada</h2>
+            </div>
+            
+            <div class="card-content">
+                <div class="input-group">
+                    <label for="array-input">Array ordenado (separados por comas):</label>
+                    <div class="input-wrapper">
+                        <input type="text" id="array-input" placeholder="Ejemplo: 2,7,11,15" value="2,7,11,15">
+                        <span class="input-hint">El array debe estar ordenado en forma ascendente</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="target-input">Valor objetivo (target):</label>
+                    <div class="input-wrapper">
+                        <input type="number" id="target-input" placeholder="Ejemplo: 9" value="9">
+                    </div>
+                </div>
+                
+                <button id="calculate-btn" class="glow-button">
+                    <span class="button-icon">🔍</span>
+                    <span>Iniciar búsqueda</span>
+                </button>
+                
+                <div class="examples">
+                    <div class="examples-title">Ejemplos:</div>
+                    <div class="examples-buttons">
+                        <button class="example-pill" data-array="2,7,11,15" data-target="9">Ejemplo 1</button>
+                        <button class="example-pill" data-array="2,3,4" data-target="6">Ejemplo 2</button>
+                        <button class="example-pill" data-array="-1,0" data-target="-1">Ejemplo 3</button>
+                        <button class="example-pill" data-array="1,3,4,5,7,10,11" data-target="9">Ejemplo 4</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card visualization-card">
+            <div class="card-header">
+                <div class="card-icon">🎬</div>
+                <h2>Visualización</h2>
+            </div>
+            
+            <div class="card-content">
+                <div id="result-message" class="result-message">
+                    Presiona "Iniciar búsqueda" para comenzar la visualización
+                </div>
+                
+                <div class="array-container">
+                    <div id="array-display" class="array-display"></div>
+                    <div class="pointers-container">
+                        <div id="left-pointer" class="pointer left-pointer">
+                            <div class="pointer-arrow">↑</div>
+                            <div class="pointer-label">Left</div>
+                        </div>
+                        <div id="right-pointer" class="pointer right-pointer">
+                            <div class="pointer-arrow">↑</div>
+                            <div class="pointer-label">Right</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animation-controls">
+                    <button id="reset-btn" class="control-btn">
+                        <span class="button-icon">🔄</span>
+                        <span>Reiniciar</span>
+                    </button>
+                    <button id="prev-btn" class="control-btn" disabled>
+                        <span class="button-icon">⏮</span>
+                        <span>Anterior</span>
+                    </button>
+                    <button id="next-btn" class="control-btn" disabled>
+                        <span class="button-icon">⏭</span>
+                        <span>Siguiente</span>
+                    </button>
+                    <button id="auto-btn" class="control-btn" disabled>
+                        <span class="button-icon">▶️</span>
+                        <span>Auto</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card execution-card">
+            <div class="card-header">
+                <div class="card-icon">📝</div>
+                <h2>Pasos de ejecución</h2>
+            </div>
+            
+            <div class="card-content">
+                <div class="steps-container">
+                    <ul id="steps" class="steps">
+                        <li class="placeholder-step">La visualización mostrará los pasos del algoritmo aquí.</li>
+                    </ul>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-title">Estrategia</div>
+                        <div class="info-value">Two Pointers</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">Tiempo</div>
+                        <div class="info-value">O(n)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">Espacio</div>
+                        <div class="info-value">O(1)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-title">Diferencia del original</div>
+                        <div class="info-value">Índices en base 1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card explanation-card">
+            <div class="card-header">
+                <div class="card-icon">💡</div>
+                <h2>Cómo funciona</h2>
+            </div>
+            
+            <div class="card-content">
+                <div class="explanation">
+                    <p>El algoritmo <strong>Two Sum II</strong> aprovecha que el array está <strong>ordenado</strong> para usar una técnica llamada <strong>"Two Pointers"</strong> (Dos Punteros):</p>
+                    
+                    <ol class="explanation-steps">
+                        <li>Iniciamos con un puntero <strong>izquierdo</strong> al principio del array y un puntero <strong>derecho</strong> al final.</li>
+                        <li>Calculamos la suma de los elementos en esas posiciones.</li>
+                        <li>Si la suma es <strong>igual</strong> al target, hemos encontrado la solución.</li>
+                        <li>Si la suma es <strong>menor</strong> que el target, movemos el puntero izquierdo hacia la derecha.</li>
+                        <li>Si la suma es <strong>mayor</strong> que el target, movemos el puntero derecho hacia la izquierda.</li>
+                        <li>Repetimos hasta encontrar la solución.</li>
+                    </ol>
+                    
+                    <div class="tip">
+                        <div class="tip-icon">💯</div>
+                        <div class="tip-text">
+                            <strong>Ventaja clave:</strong> Esta solución tiene una complejidad espacial de O(1), ya que solo necesitamos dos punteros independientemente del tamaño del array.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="author">
+                <h3>Elizabeth Diaz Familia</h3>
+                <div class="social-links">
+                    <a href="https://github.com/Lizzy0981" target="_blank" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com/in/eli-familia" target="_blank" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                    <a href="https://twitter.com/Lizzyfamilia" target="_blank" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="credits">
+                <p>© <span id="current-year">2025</span> | Hecho con 💜</p>
+                <p class="acknowledgments">Con agradecimiento a Oracle Next Education y Alura Latam</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
