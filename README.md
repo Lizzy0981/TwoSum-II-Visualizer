@@ -4,7 +4,7 @@ Un visualizador futurista e interactivo para el algoritmo "Two Sum II", optimiza
 
 ## 📱 Imágenes de la Aplicación 📱
 
-![Two Sum II Visualizer - Interfaz Principal] ![<Captura de pantalla_25-2-2025_173932_.jpeg>]
+![Two Sum II Visualizer - Interfaz Principal] ![Captura de pantalla_25-2-2025_173932_](https://github.com/user-attachments/assets/a08749bc-0126-4e27-b6fa-268e54062e14)
 
 
 *Captura de pantalla de la interfaz principal de Two Sum II Visualizer, mostrando el diseño futurista con efectos neón.*
