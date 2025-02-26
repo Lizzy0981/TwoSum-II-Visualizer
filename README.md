@@ -51,7 +51,7 @@ git clone https://github.com/Lizzy0981/TwoSum-II-Visualizer.git
 
 2. Abre el archivo index.html en tu navegador o usa un servidor local como Live Server de VSCode.
 
-3. También puedes acceder a la versión desplegada [aquí](https://twosum-ii-visualizer.vercel.app/).
+3. También puedes acceder a la versión desplegada [aquí](https://two-sum-ii-visualizer.vercel.app/).
 
 ## 💡 Uso
 
